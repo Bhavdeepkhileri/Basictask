@@ -9,7 +9,7 @@ const server=http.createServer((req,res)=>{
     }
     catch(err)
     {
-        console.log("you can't create simple server, maybe start looking for new line of work",err);
+        console.log("error errerrrh",err);
     }
     res.end();
 });
