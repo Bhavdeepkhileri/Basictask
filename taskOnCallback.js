@@ -1,0 +1,30 @@
+const fs=require('fs');
+
+fs.readFile(__dirname+'/userinputfile.txt','utf8',(err,data)=>{
+    if(err)
+    {
+        console.log(err);
+    }
+    else
+    {
+        fs.appendFile(__dirname+'/userinputfile.txt',data,(err)=>{
+            if(err)
+            {
+                console.log(err);
+            }
+            else
+            {
+                fs.readFile(__dirname+'/userinputfile.txt','utf8',(err,data)=>{
+                    if(err)
+                    {
+                        console.log(err);
+                    }
+                    else
+                    {
+                        console.log(data);
+                    }
+                })
+            }
+        })
+    }
+})
